@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL; // matches your backend
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getChats = async () => {
   console.log("API_URL:", API_URL);
