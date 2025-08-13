@@ -29,5 +29,3 @@ const start = async () => {
 };
 
 start();
-
-//number in the ui

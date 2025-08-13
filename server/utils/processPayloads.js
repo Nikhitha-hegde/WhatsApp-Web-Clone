@@ -10,7 +10,6 @@ const processPayloads = async () => {
     if (file.endsWith(".json")) {
       const jsonData = JSON.parse(fs.readFileSync(path.join(dataDir, file), "utf8"));
 
-      // Messages payload
       if (jsonData.metaData?.entry[0]?.changes[0]?.value?.messages) {
         const value = jsonData.metaData.entry[0].changes[0].value;
         const contact = value.contacts?.[0];
@@ -29,7 +28,6 @@ const processPayloads = async () => {
         );
       }
 
-      // Status payload
       if (jsonData.metaData?.entry[0]?.changes[0]?.value?.statuses) {
         const statusData = jsonData.metaData.entry[0].changes[0].value.statuses[0];
         await processed_message.updateOne(
